@@ -17,11 +17,12 @@ public class Lab04
     {
         int n1, n2, n3, n4, n5;
         
-        double mean = computeMean();
-        double stdDev = computeStandardDeviation();
+        double mean = computeMean();//gets mean from method "computeMean"
+        double stdDev = computeStandardDeviation();//gets stdDev from method "computeStandardDeviation"
        
         Scanner inFile = new Scanner(new File("input.txt"));
        
+        //takes integers from input file and declares them as variables
         n1 = inFile.nextInt();
         n2 = inFile.nextInt();
         n3 = inFile.nextInt();
@@ -68,15 +69,19 @@ public class Lab04
         n4 = inFile.nextInt();
         n5 = inFile.nextInt();
         
+        //separated the equation to smaller parts; first I calculared the values of each
+        //value subracted by the mean calculated in method "computeMean"
         x1 = n1 - mean;
         x2 = n2 - mean;
         x3 = n3 - mean;
         x4 = n4 - mean;
         x5 = n5 - mean;
         
+        //calculates the numerator from the standard deviation equation
         numerator = Math.pow(x1, 2) + Math.pow(x2, 2) + Math.pow(x3, 2) + 
                 Math.pow(x4, 2) + Math.pow(x5, 2);
         
+        //calculates standard deviation
         stdDev = Math.sqrt(numerator / 5);
                
         return stdDev;
